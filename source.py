@@ -5,7 +5,7 @@ import numpy as np
 
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-import sqlite3
+
 import pandas as pd
 import os
 import seaborn as sns
@@ -15,7 +15,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder, MinMaxScaler
 from sklearn.feature_selection import  SelectKBest, RFE, f_regression, mutual_info_regression
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.tree import  DecisionTreeRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.compose import ColumnTransformer
 from sklearn.svm import SVR
@@ -42,7 +42,7 @@ def fit_model(df, vars=None, clf="rf"):
     # Definir la variable objetivo
     target = "Costo_por_evento"
     
-    to_drop = ["Asegurado_Id", "Poliza_Asegurado_Id", target]
+    to_drop = ["Asegurado_Id", "Poliza_Asegurado_Id", "Valor_Pagado", target]
     
     # X = df.drop(to_drop, axis=1)
     
