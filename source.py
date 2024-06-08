@@ -88,10 +88,10 @@ def fit_model(df, vars=None, clf="rf"):
     model.fit(X_train, y_train)
     
     # Verificar si existe el directorio 'models', si no, crearlo
-    if os.path.exists('models'):
-        pass
-    else:
-        os.makedirs("models")
+    # if os.path.exists('models'):
+    #     pass
+    # else:
+    #     os.makedirs("models")
     
     # Retornar el modelo entrenado
     return model
