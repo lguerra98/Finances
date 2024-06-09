@@ -34,8 +34,6 @@ def fit_model(df, vars=None, clf="rf"):
         
     """   
 
-
-
     # df = df.sample(10000)  
     df = df.copy()  
     
@@ -44,10 +42,9 @@ def fit_model(df, vars=None, clf="rf"):
     
     to_drop = ["Asegurado_Id", "Poliza_Asegurado_Id", "Valor_Pagado", target]
     
-    # X = df.drop(to_drop, axis=1)
     
     if vars:
-            X = df[vars]
+        X = df[vars]
     else:
         X = df.drop(to_drop, axis=1)
     
@@ -94,7 +91,7 @@ def fit_model(df, vars=None, clf="rf"):
     #     os.makedirs("models")
     
     # Retornar el modelo entrenado
-    return model
+    return model, X_test, y_test
 
 def feature_sel(df, num_feat_kbest=7, num_rfe=10, sample=None, plot_metric="mutual_info", plot=False):
     """
